@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
+use App\Models\Pesanan;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
-class MenuController extends Controller
+class PesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::orderBy('time', 'DESC')->get();
+        $pesanan = Pesanan::orderBy('time', 'DESC')->get();
         $response = [
-            'massage' =>  'list menu order by time',
-            'data' => $menu
+            'massage' =>  'list pesanan order by time',
+            'data' => $pesanan
         ];
 
         return response()->json($response, Response::HTTP_OK);
@@ -45,10 +45,11 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama' => ['required'],
-            'stock' => ['required', 'numeric'],
-            'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required']
+            'no_meja' => ['required', 'numeric'],
+            'nama_pemesan' => ['required'],
+            'no_telpon' => ['required', 'numeric', 'digits_between:11,12'],
+            'jumlah_menu' => ['required', 'min:1', 'numeric'],
+            'total_harga' => ['required', 'numeric']
         ]);
 
         if ($validator->fails()) {
@@ -57,10 +58,10 @@ class MenuController extends Controller
         }
 
         try {
-            $menu = Menu::create($request->all());
+            $pesanan = Pesanan::create($request->all());
             $response = [
-                'massage' => 'menu created',
-                'data' => $menu
+                'massage' => 'pesanan created',
+                'data' => $pesanan
             ];
 
             return response()->json($response, Response::HTTP_CREATED);
@@ -79,11 +80,12 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        $menu = Menu::findOrFail($id);
+        $pesanan = Pesanan::findOrFail($id);
         $response = [
-            'massage' => 'Detail of menu',
-            'data' => $menu
+            'massage' => 'Detail of pesanan',
+            'data' => $pesanan
         ];
+        //kurang kasih liat list detail pesanan
 
         return response()->json($response, Response::HTTP_OK);
     }
@@ -108,13 +110,14 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $menu = Menu::findOrFail($id);
+        $pesanan = Pesanan::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'nama' => ['required'],
-            'stock' => ['required', 'numeric'],
-            'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required']
+            'no_meja' => ['required', 'numeric'],
+            'nama_pemesan' => ['required'],
+            'no_telpon' => ['required', 'numeric', 'digits_between:11,12'],
+            'jumlah_menu' => ['required', 'min:1', 'numeric'],
+            'total_harga' => ['required', 'numeric']
         ]);
 
         if ($validator->fails()) {
@@ -123,10 +126,10 @@ class MenuController extends Controller
         }
 
         try {
-            $menu->update($request->all());
+            $pesanan->update($request->all());
             $response = [
-                'massage' => 'menu update',
-                'data' => $menu
+                'massage' => 'pesanan update',
+                'data' => $pesanan
             ];
 
             return response()->json($response, Response::HTTP_OK);
@@ -145,13 +148,13 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::findOrFail($id);
+        $pesanan = Pesanan::findOrFail($id);
 
         try {
-            $menu->delete();
+            $pesanan->delete();
             $response = [
-                'massage' => 'menu deleted',
-                'data' => $menu
+                'massage' => 'pesanan delete',
+                'data' => $pesanan
             ];
 
             return response()->json($response, Response::HTTP_OK);
