@@ -39026,9 +39026,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "form-item row" }, [
           _c("select", [
-            _c("option", { attrs: { disabled: "", value: "" } }, [
-              _vm._v("Pilih Metode Pembayaran")
-            ]),
+            _c(
+              "option",
+              { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+              [_vm._v("Pilih Metode Pembayaran")]
+            ),
             _vm._v(" "),
             _c("option", [_vm._v("Tunai")]),
             _vm._v(" "),

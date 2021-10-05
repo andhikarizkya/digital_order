@@ -39,7 +39,7 @@
         <hr class="class-5" />
         <div class="form-item row">
             <select>
-                <option disabled value="">Pilih Metode Pembayaran</option>
+                <option value="" selected disabled hidden>Pilih Metode Pembayaran</option>
                 <option>Tunai</option>
                 <option>Debit/Kredit</option>
             </select>
