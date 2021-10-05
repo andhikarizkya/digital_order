@@ -47,6 +47,7 @@ class MenuController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
             'stock' => ['required', 'numeric'],
+            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
             'deskripsi' => ['required']
         ]);
@@ -54,6 +55,11 @@ class MenuController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(),
             Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        if ($request->file('foto_menu')) {
+            $path = $request->file('foto_menu')->store('menu_images');
+            $request->foto_menu = $path;
         }
 
         try {
@@ -113,6 +119,7 @@ class MenuController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
             'stock' => ['required', 'numeric'],
+            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg', 'max:2048'],
             'harga' => ['required', 'numeric'],
             'deskripsi' => ['required']
         ]);
@@ -123,6 +130,8 @@ class MenuController extends Controller
         }
 
         try {
+            $path = $request->file('foto_menu')->store('menu_images');
+            $request->foto_menu = $path;
             $menu->update($request->all());
             $response = [
                 'massage' => 'menu update',
