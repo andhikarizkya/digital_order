@@ -21,10 +21,10 @@
                 </ul>
             </transition>
         </nav>
-    </header>  
-</template>      
+    </header>
+</template>
                 <!-- <div class="content">
-                
+
                     <nav role="navigation">
                         <div id="menuToggle">
                             <input type="checkbox" />
@@ -40,7 +40,7 @@
                     </nav>
                 </div> -->
 
- 
+ //test
 <script>
     export default {
         name: "navigation",
