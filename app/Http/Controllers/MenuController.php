@@ -47,7 +47,7 @@ class MenuController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
             'stock' => ['required', 'numeric'],
-            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg', 'max:2048'],
+            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
             'deskripsi' => ['required']
         ]);
@@ -57,9 +57,12 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        try {
+        if ($request->file('foto_menu')) {
             $path = $request->file('foto_menu')->store('menu_images');
             $request->foto_menu = $path;
+        }
+
+        try {
             $menu = Menu::create($request->all());
             $response = [
                 'massage' => 'menu created',
