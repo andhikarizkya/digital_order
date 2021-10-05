@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\DetailPesananController;
+use App\Http\Controllers\LogController;
+use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\TransaksiController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +43,11 @@ Route::resource('/menu', MenuController::class)->except(['create', 'edit']);
 */
 
 Route::resource('/pesanan', PesananController::class)->except(['create', 'edit']);
+
+Route::resource('/detail', DetailPesananController::class)->except(['create', 'edit']);
+
+Route::resource('/log', LogController::class)->except(['create', 'edit']);
+
+Route::resource('/notifikasi', NotifikasiController::class)->except(['create', 'edit']);
+
+Route::resource('/transaksi', TransaksiController::class)->except(['create', 'edit']);
