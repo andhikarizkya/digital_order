@@ -39133,125 +39133,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "layout-pemesanan",
-      attrs: { action: "/", method: "post", autocomplete: "on" }
-    },
-    [
-      _c("div", { staticClass: "form-item row" }, [
-        _c("div", { staticClass: "col form" }, [
-          _c("label", { attrs: { for: "nama" } }, [_vm._v("Nama")]),
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "form",
+      {
+        staticClass: "layout-pemesanan",
+        attrs: { action: "/", method: "post", autocomplete: "on" }
+      },
+      [
+        _c("div", { staticClass: "form-item row" }, [
+          _c("div", { staticClass: "col form" }, [
+            _c("label", { attrs: { for: "nama" } }, [_vm._v("Nama")]),
+            _vm._v(" "),
+            _c("input", { attrs: { type: "text", name: "nama", id: "nama" } })
+          ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.nama,
-                expression: "nama"
-              }
-            ],
-            attrs: { type: "text", name: "nama", id: "nama" },
-            domProps: { value: _vm.nama },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.nama = $event.target.value
-              }
-            }
-          })
+          _c("div", { staticClass: "col form" }, [
+            _c("label", { attrs: { for: "noTelepon" } }, [
+              _vm._v("No Telepon")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "number", name: "noTelepon", id: "noTelepon" }
+            })
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col form" }, [
-          _c("label", { attrs: { for: "noTelepon" } }, [_vm._v("No Telepon")]),
+        _c("div", { staticClass: "form-item row" }, [
+          _c("div", { staticClass: "col form" }, [
+            _c("label", { attrs: { for: "catatan" } }, [_vm._v("Catatan")]),
+            _vm._v(" "),
+            _c("textarea", {
+              attrs: { placeholder: "Contoh: Extra saus ya!", rows: "4" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-item row" }, [
+          _c("div", { staticClass: "col form" }, [
+            _c(
+              "label",
+              { staticClass: "rangkuman", attrs: { for: "rangkuman" } },
+              [_vm._v("Rangkuman Pesanan")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col" }, [
+              _c(
+                "label",
+                { staticClass: "pesanans1", attrs: { for: "pesanans1" } },
+                [_vm._v("1x Ayam")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "pesanans2", attrs: { for: "pesanans2" } },
+                [_vm._v("1x Nasi Goreng Spesial")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("label", { staticClass: "total", attrs: { for: "total" } }, [
+              _vm._v("Total")
+            ])
+          ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.noTelepon,
-                expression: "noTelepon"
-              }
-            ],
-            attrs: { type: "number", name: "noTelepon", id: "noTelepon" },
-            domProps: { value: _vm.noTelepon },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.noTelepon = $event.target.value
-              }
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-item row" }, [
-        _c("div", { staticClass: "col form" }, [
-          _c("label", { attrs: { for: "catatan" } }, [_vm._v("Catatan")]),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.catatan,
-                expression: "catatan"
-              }
-            ],
-            attrs: { placeholder: "Contoh: Extra saus ya!", rows: "4" },
-            domProps: { value: _vm.catatan },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.catatan = $event.target.value
-              }
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("hr", { staticClass: "class-5" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-item row" }, [
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.selected,
-                expression: "selected"
-              }
-            ],
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.selected = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          [
+          _c("div", { staticClass: "row form" }, [
+            _c("div", { staticClass: "col" }, [
+              _c(
+                "button",
+                { staticClass: "tambah_pesanan", attrs: { type: "button" } },
+                [_vm._v("Tambahkan Pesanan")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "pesanan1", attrs: { for: "pesanan1" } },
+                [_vm._v("Rp 10.000")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "pesanan2", attrs: { for: "pesanan2" } },
+                [_vm._v("Rp 20.000")]
+              ),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "total_harga", attrs: { for: "total_harga" } },
+                [_vm._v("Rp 30.000")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr", { staticClass: "class-5" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-item row" }, [
+          _c("select", [
             _c("option", { attrs: { disabled: "", value: "" } }, [
               _vm._v("Pilih Metode Pembayaran")
             ]),
@@ -39259,83 +39242,21 @@ var render = function() {
             _c("option", [_vm._v("Tunai")]),
             _vm._v(" "),
             _c("option", [_vm._v("Debit/Kredit")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(1)
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-item row" }, [
-      _c("div", { staticClass: "col form" }, [
-        _c("label", { staticClass: "rangkuman", attrs: { for: "rangkuman" } }, [
-          _vm._v("Rangkuman Pesanan")
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col" }, [
-          _c(
-            "label",
-            { staticClass: "pesanans1", attrs: { for: "pesanans1" } },
-            [_vm._v("1x Ayam")]
-          ),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "pesanans2", attrs: { for: "pesanans2" } },
-            [_vm._v("1x Nasi Goreng Spesial")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "total", attrs: { for: "total" } }, [
-          _vm._v("Total")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row form" }, [
-        _c("div", { staticClass: "col" }, [
+        _c("div", { staticClass: "justify-content-center" }, [
           _c(
             "button",
-            { staticClass: "tambah_pesanan", attrs: { type: "button" } },
-            [_vm._v("Tambahkan Pesanan")]
-          ),
-          _vm._v(" "),
-          _c("label", { staticClass: "pesanan1", attrs: { for: "pesanan1" } }, [
-            _vm._v("Rp 10.000")
-          ]),
-          _vm._v(" "),
-          _c("label", { staticClass: "pesanan2", attrs: { for: "pesanan2" } }, [
-            _vm._v("Rp 20.000")
-          ]),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "total_harga", attrs: { for: "total_harga" } },
-            [_vm._v("Rp 30.000")]
+            {
+              staticClass: "btn primary mx-auto d-block",
+              attrs: { type: "submit" }
+            },
+            [_vm._v("Pesan")]
           )
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "justify-content-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn primary mx-auto d-block",
-          attrs: { type: "submit" }
-        },
-        [_vm._v("Pesan")]
-      )
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true

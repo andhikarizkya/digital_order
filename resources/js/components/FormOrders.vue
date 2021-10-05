@@ -3,18 +3,18 @@
         <div class="form-item row">
         <div class="col form">
             <label for="nama">Nama</label>
-            <input type="text" name="nama" id="nama" v-model="nama" />
+            <input type="text" name="nama" id="nama"/>
         </div>
         <div class="col form">
             <label for="noTelepon">No Telepon</label>
-            <input type="number" name="noTelepon" id="noTelepon" v-model="noTelepon" />
+            <input type="number" name="noTelepon" id="noTelepon" />
         </div>
         </div>
 
         <div class="form-item row">
         <div class="col form">
             <label for="catatan">Catatan</label>
-            <textarea v-model="catatan" placeholder="Contoh: Extra saus ya!" rows="4"></textarea>
+            <textarea placeholder="Contoh: Extra saus ya!" rows="4"></textarea>
         </div>
         </div>
 
@@ -38,7 +38,7 @@
         </div>
         <hr class="class-5" />
         <div class="form-item row">
-            <select v-model="selected">
+            <select>
                 <option disabled value="">Pilih Metode Pembayaran</option>
                 <option>Tunai</option>
                 <option>Debit/Kredit</option>
