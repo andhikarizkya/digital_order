@@ -2227,8 +2227,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -6979,7 +6977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-detail {\n    font-family: 'Montserrat', sans-serif;\n    margin-top: 30px;\n    margin-bottom: 40px;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    overflow-x: auto;\n}\n.nama_produk {\n    font-size: 24px;\n}\n.harga_produk {\n    font-size: 18px;\n}\n.rincian_produk {\n    font-size: 16px;\n    font-weight: normal;\n    color: #181725;\n}\n.deskripsi {\n    font-size: 13px;\n    font-weight: normal;\n    color: #B0B0B0;\n    margin-bottom: 20px;\n}\nlabel {\n    display: inline-block;\n    font-weight: bold;\n}\n.btn {\n    display: flex;\n    font-size: 18px;\n    width: 100%;\n    height: 55px;\n    border: 1px solid;\n    border-radius: 10px;\n    padding: 14px 28px;\n    cursor: pointer;\n}\n.primary {\n    background-color: #4DA9FF;\n    color: #FFFFFF;\n}\n\n/* -- quantity box -- */\n.quantity {\n    display: inline-block;\n}\n.quantity .input-text.qty {\n    width: 35px;\n    height: 39px;\n    padding: 0 5px;\n    text-align: center;\n    background-color: transparent;\n    border: 1px solid #efefef;\n}\n.quantity.buttons_added {\n    text-align: right;\n    position: relative;\n    white-space: nowrap;\n    vertical-align: top;\n}\n.quantity.buttons_added input {\n    display: inline-block;\n    margin: 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added label {\n    float: left;\n    justify-content: left;\n    font-size: 16px;\n    margin: 12px 0 0 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added .minus,\n.quantity.buttons_added .plus {\n    padding: 7px 10px 8px;\n    height: 41px;\n    background-color: #ffffff;\n    border: 1px solid #efefef;\n    cursor:pointer;}\n.quantity.buttons_added .minus {\n    border-right: 0;\n}\n.quantity.buttons_added .plus {\n    border-left: 0;\n}\n.quantity.buttons_added .minus:hover,\n.quantity.buttons_added .plus:hover {\n    background: #eeeeee;\n}\n.quantity input::-webkit-outer-spin-button,\n.quantity input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    margin: 0;\n}\n.quantity.buttons_added .minus:focus,\n.quantity.buttons_added .plus:focus {\n    outline: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-detail {\n    font-family: 'Montserrat', sans-serif;\n    margin-top: 30px;\n    margin-bottom: 40px;\n}\n.img-fluid {\n    padding: 10px 10px 10px 10px;\n}\n.form-item {\n    margin: 1em auto;\n}\n.col .nama_produk {\n    font-size: 24px;\n}\n.col .harga_produk {\n    font-size: 18px;\n}\n.col .rincian_produk {\n    font-size: 16px;\n    font-weight: normal;\n    color: #181725;\n}\n.col .deskripsi {\n    font-size: 13px;\n    font-weight: normal;\n    color: #B0B0B0;\n    margin-bottom: 20px;\n}\nlabel {\n    font-family: 'Montserrat', sans-serif;\n    display: flex;\n    font-weight: bold;\n}\n\n/* -- quantity box -- */\n.quantity {\n    display: inline-block;\n}\n.quantity .input-text.qty {\n    width: 35px;\n    height: 39px;\n    padding: 0 5px;\n    text-align: center;\n    background-color: transparent;\n    border: 1px solid #efefef;\n}\n.quantity.buttons_added {\n    text-align: right;\n    position: relative;\n    white-space: nowrap;\n    vertical-align: top;\n}\n.quantity.buttons_added input {\n    display: inline-block;\n    margin: 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added label {\n    float: left;\n    justify-content: left;\n    font-size: 16px;\n    margin: 12px 0 0 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added .minus,\n.quantity.buttons_added .plus {\n    padding: 7px 10px 8px;\n    height: 41px;\n    background-color: #ffffff;\n    border: 1px solid #efefef;\n    cursor:pointer;}\n.quantity.buttons_added .minus {\n    border-right: 0;\n}\n.quantity.buttons_added .plus {\n    border-left: 0;\n}\n.quantity.buttons_added .minus:hover,\n.quantity.buttons_added .plus:hover {\n    background: #eeeeee;\n}\n.quantity input::-webkit-outer-spin-button,\n.quantity input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    margin: 0;\n}\n.quantity.buttons_added .minus:focus,\n.quantity.buttons_added .plus:focus {\n    outline: none;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7003,7 +7001,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-pemesanan {\n    font-family: 'Montserrat', sans-serif;\n    padding: 20px 30px;\n    margin: 10px 10px 10px 10px;\n}\n.col label {\n    font-size: 12px;\n}\n.row .rangkuman {\n    font-size: 16px;\n    font-weight: normal;\n}\n.row .pesanans1 {\n    font-size: 14px;\n    font-weight: normal;\n}\n.row .pesanans2 {\n    font-size: 14px;\n    font-weight: normal;\n}\n.row .total {\n    font-size: 14px;\n    font-weight: 600;\n}\n.tambah_pesanan {\n    font-size: 9px;\n    font-weight: 300;\n    margin-top: 7px;\n    float: right;\n    color: #4DA9FF;\n    text-align: right;\n    border: 0;\n    background-color: #FFFFFF;\n    cursor: pointer;\n}\n.row .pesanan1 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.row .pesanan2 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.row .total_harga {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item {\n    margin: 1em auto;\n}\n.form-item label {\n    display: block;\n    font-weight: bold;\n}\n.form-item input {\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item textarea {\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item select {\n    border: 1px solid grey;\n    border-radius: 5px;\n    width: 100%;\n}\nhr.class-5 {\n            background-color: #fff;\n            border-top: 2px dashed #8c8b8b;\n}\n.btn {\n    display: flex;\n    font-size: 18px;\n    width: 100%;\n    height: 55px;\n    border: 1px solid;\n    border-radius: 10px;\n    padding: 14px 28px;\n    cursor: pointer;\n}\n.primary {\n    background-color: #4DA9FF;\n    color: #FFFFFF;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-pemesanan {\n    font-family: 'Montserrat', sans-serif;\n    padding: 20px 30px;\n    margin: 10px 10px 10px 10px;\n}\n.form-item .rangkuman {\n    font-size: 16px;\n    font-style: normal;\n    font-weight: 300;\n}\n.form-item .pesanans1 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: normal;\n}\n.form-item .pesanans2 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: normal;\n}\n.form-item .total {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n}\n.form-item .col .tambah_pesanan {\n    font-size: 10px;\n    font-weight: 300;\n    float: right;\n    color: #4DA9FF;\n    text-align: right;\n    border: 0;\n    background-color: #FFFFFF;\n    cursor: pointer;\n}\n.form-item .col .pesanan1 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item .col .pesanan2 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item .col .total_harga {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item {\n    margin: 1em auto;\n}\n.form-item .col label {\n    font-family: 'Montserrat', sans-serif;\n    display: block;\n    font-weight: bold;\n    font-size: 12px;\n}\n.form-item input {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item textarea {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item select {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 5px;\n    width: 100%;\n    padding: 7px 5px 7px 5px;\n}\n.form-item option {\n    font-family: 'Montserrat', sans-serif;\n}\nhr.class-5 {\n            background-color: #fff;\n            border-top: 2px dashed #8c8b8b;\n}\n.btn {\n    font-family: 'Montserrat', sans-serif;\n    display: flex;\n    font-size: 18px;\n    width: 100%;\n    height: 55px;\n    border: 1px solid;\n    border-radius: 10px;\n    padding: 14px 28px;\n    cursor: pointer;\n}\n.primary {\n    background-color: #4DA9FF;\n    color: #FFFFFF;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39095,7 +39093,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "branding" }, [
-      _c("div", { staticClass: "pp" }, [_vm._v("Digital Food")])
+      _c("div", { staticClass: "pp" }, [_vm._v("Digital Order")])
     ])
   }
 ]
@@ -39122,18 +39120,18 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "layout-detail" }, [
-    _c("div", { staticClass: "col-md-6" }, [
+    _c("div", { staticClass: "col" }, [
       _c("img", {
         staticClass: "img-fluid",
         attrs: { src: "/images/nasgor.jpeg" }
-      })
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2)
+      }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -39141,91 +39139,86 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", [
-        _c(
-          "label",
-          { staticClass: "nama_produk", attrs: { for: "nama_produk" } },
-          [_vm._v("Nasi Goreng Spesial")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c(
-          "label",
-          { staticClass: "harga_produk", attrs: { for: "harga_produk" } },
-          [_vm._v("Rp 20.000")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "quantity buttons_added" }, [
-        _c(
-          "label",
-          {
-            staticClass: "jumlah_pemesanan",
-            attrs: { for: "jumlah_pemesanan" }
-          },
-          [_vm._v("Jumlah Pesanan")]
-        ),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "minus",
-          attrs: { type: "button", value: "-" }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "input-text qty text",
-          attrs: {
-            type: "number",
-            step: "1",
-            min: "1",
-            max: "",
-            name: "jumlah_pesan",
-            value: "1",
-            title: "Qty",
-            size: "4",
-            pattern: "",
-            inputmode: "",
-            id: "quantity"
-          }
-        }),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "plus",
-          attrs: { type: "button", value: "+" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col" }, [
       _c(
         "label",
-        { staticClass: "rincian_produk", attrs: { for: "rincian_produk" } },
-        [_vm._v("Rincian Produk")]
+        { staticClass: "nama_produk", attrs: { for: "nama_produk" } },
+        [_vm._v("Nasi Goreng Spesial")]
       ),
       _vm._v(" "),
-      _c("label", { staticClass: "deskripsi", attrs: { for: "deskripsi" } }, [
-        _vm._v("Nasi Goreng Dengan campuran Sosis dan Seafood")
-      ])
+      _c(
+        "label",
+        { staticClass: "harga_produk", attrs: { for: "harga_produk" } },
+        [_vm._v("Rp 20.000")]
+      )
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
+    return _c("div", { staticClass: "col quantity buttons_added" }, [
       _c(
-        "button",
-        {
-          staticClass: "btn primary mx-auto d-block",
-          attrs: { type: "submit" }
-        },
-        [_vm._v("Tambah ke Keranjang")]
-      )
+        "label",
+        { staticClass: "jumlah_pemesanan", attrs: { for: "jumlah_pemesanan" } },
+        [_vm._v("Jumlah Pesanan")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "minus",
+        attrs: { type: "button", value: "-" }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "input-text qty text",
+        attrs: {
+          type: "number",
+          step: "1",
+          min: "1",
+          max: "",
+          name: "jumlah_pesan",
+          value: "1",
+          title: "Qty",
+          size: "4",
+          pattern: "",
+          inputmode: "",
+          id: "quantity"
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "plus",
+        attrs: { type: "button", value: "+" }
+      }),
+      _vm._v(" "),
+      _c("hr")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", [
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "label",
+          { staticClass: "rincian_produk", attrs: { for: "rincian_produk" } },
+          [_vm._v("Rincian Produk")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "deskripsi", attrs: { for: "deskripsi" } }, [
+          _vm._v("Nasi Goreng Dengan campuran Sosis dan Seafood")
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn primary mx-auto d-block",
+            attrs: { type: "submit" }
+          },
+          [_vm._v("Tambah ke Keranjang")]
+        )
+      ])
     ])
   }
 ]
@@ -39351,7 +39344,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("hr", { staticClass: "class-5" }),
         _vm._v(" "),
-        _c("div", { staticClass: "form-item row" }, [
+        _c("div", { staticClass: "form-item" }, [
           _c("select", [
             _c(
               "option",

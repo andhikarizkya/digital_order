@@ -1,29 +1,27 @@
 <template>
     <div class="layout-detail">
-        <div class="col-md-6">
+        <div class="col">
             <img :src=" '/images/nasgor.jpeg' " class="img-fluid" />
-        </div>
-        <div class="col-md-12">
-            <div>
+            <div class="col">
                 <label for="nama_produk" class="nama_produk">Nasi Goreng Spesial</label>
-            </div>
-            <div>
                 <label for="harga_produk" class="harga_produk">Rp 20.000</label>
             </div>
-                <div class="quantity buttons_added">
+                <div class="col quantity buttons_added">
                     <label for="jumlah_pemesanan" class="jumlah_pemesanan">Jumlah Pesanan</label>
                     <input type="button" value="-" class="minus">
                     <input type="number" step="1" min="1" max="" name="jumlah_pesan" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="" id="quantity">
                     <input type="button" value="+" class="plus">
+                    <hr>
                 </div>
-            </div>
-            <div class="col">
-                <label for="rincian_produk" class="rincian_produk">Rincian Produk</label>
-                <label for="deskripsi" class="deskripsi">Nasi Goreng Dengan campuran Sosis dan Seafood</label>
-            </div>
-            <div class="col">
-                <button type="submit" class="btn primary mx-auto d-block">Tambah ke Keranjang</button>
-            </div>
+
+            <form>
+                <div class="col">
+                    <label for="rincian_produk" class="rincian_produk">Rincian Produk</label>
+                    <label for="deskripsi" class="deskripsi">Nasi Goreng Dengan campuran Sosis dan Seafood</label>
+                    <button type="submit" class="btn primary mx-auto d-block">Tambah ke Keranjang</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -37,25 +35,31 @@ export default {
     font-family: 'Montserrat', sans-serif;
     margin-top: 30px;
     margin-bottom: 40px;
-    user-select: none;
-    overflow-x: auto;
 }
 
-.nama_produk {
+.img-fluid {
+    padding: 10px 10px 10px 10px;
+}
+
+.form-item {
+    margin: 1em auto;
+}
+
+.col .nama_produk {
     font-size: 24px;
 }
 
-.harga_produk {
+.col .harga_produk {
     font-size: 18px;
 }
 
-.rincian_produk {
+.col .rincian_produk {
     font-size: 16px;
     font-weight: normal;
     color: #181725;
 }
 
-.deskripsi {
+.col .deskripsi {
     font-size: 13px;
     font-weight: normal;
     color: #B0B0B0;
@@ -63,24 +67,9 @@ export default {
 }
 
 label {
-    display: inline-block;
-    font-weight: bold;
-}
-
-.btn {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
-    font-size: 18px;
-    width: 100%;
-    height: 55px;
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 14px 28px;
-    cursor: pointer;
-}
-
-.primary {
-    background-color: #4DA9FF;
-    color: #FFFFFF;
+    font-weight: bold;
 }
 
 /* -- quantity box -- */

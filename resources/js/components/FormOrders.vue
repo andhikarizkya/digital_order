@@ -43,7 +43,7 @@
             </div>
         </div>
         <hr class="class-5" />
-        <div class="form-item row">
+        <div class="form-item">
             <select>
                 <option value="" selected disabled hidden>Pilih Metode Pembayaran</option>
                 <option>Tunai</option>
@@ -67,34 +67,33 @@ export default {}
     margin: 10px 10px 10px 10px;
 }
 
-.col label {
-    font-size: 12px;
-}
-
-.row .rangkuman {
+.form-item .rangkuman {
     font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.form-item .pesanans1 {
+    font-size: 14px;
+    font-style: normal;
     font-weight: normal;
 }
 
-.row .pesanans1 {
+.form-item .pesanans2 {
     font-size: 14px;
+    font-style: normal;
     font-weight: normal;
 }
 
-.row .pesanans2 {
+.form-item .total {
     font-size: 14px;
-    font-weight: normal;
-}
-
-.row .total {
-    font-size: 14px;
+    font-style: normal;
     font-weight: 600;
 }
 
-.tambah_pesanan {
-    font-size: 9px;
+.form-item .col .tambah_pesanan {
+    font-size: 10px;
     font-weight: 300;
-    margin-top: 7px;
     float: right;
     color: #4DA9FF;
     text-align: right;
@@ -103,21 +102,21 @@ export default {}
     cursor: pointer;
 }
 
-.row .pesanan1 {
+.form-item .col .pesanan1 {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     text-align: right;
 }
 
-.row .pesanan2 {
+.form-item .col .pesanan2 {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     text-align: right;
 }
 
-.row .total_harga {
+.form-item .col .total_harga {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -128,12 +127,15 @@ export default {}
     margin: 1em auto;
 }
 
-.form-item label {
+.form-item .col label {
+    font-family: 'Montserrat', sans-serif;
     display: block;
     font-weight: bold;
+    font-size: 12px;
 }
 
 .form-item input {
+    font-family: 'Montserrat', sans-serif;
     border: 1px solid grey;
     border-radius: 10px;
     width: 100%;
@@ -141,6 +143,7 @@ export default {}
 }
 
 .form-item textarea {
+    font-family: 'Montserrat', sans-serif;
     border: 1px solid grey;
     border-radius: 10px;
     width: 100%;
@@ -148,9 +151,15 @@ export default {}
 }
 
 .form-item select {
+    font-family: 'Montserrat', sans-serif;
     border: 1px solid grey;
     border-radius: 5px;
     width: 100%;
+    padding: 7px 5px 7px 5px;
+}
+
+.form-item option {
+    font-family: 'Montserrat', sans-serif;
 }
 
 hr.class-5 {
@@ -159,6 +168,7 @@ hr.class-5 {
         }
 
 .btn {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     font-size: 18px;
     width: 100%;

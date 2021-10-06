@@ -2,7 +2,7 @@
     <header :class="{ 'scrolled-nav': scrolledNav }">
         <nav>
             <div class="branding">
-                <div class="pp">Digital Food</div>
+                <div class="pp">Digital Order</div>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li><router-link class="link" to="/all">Product List</router-link></li>
