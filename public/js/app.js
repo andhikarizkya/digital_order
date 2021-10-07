@@ -2336,7 +2336,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {};
+  }
+});
 
 /***/ }),
 
@@ -2409,11 +2420,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       menu: {
         nama: null,
+        kategori: null,
         foto_menu: null,
         stock: null,
         harga: null,
@@ -2430,6 +2451,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var menu = new FormData();
       menu.append('nama', this.nama);
+      menu.append('kategori', this.kategori);
       menu.append('foto_menu', this.foto_menu);
       menu.append('stock', this.stock);
       menu.append('harga', this.harga);
@@ -7143,7 +7165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.kontainer {\n    margin: 0 auto;\n}\n.kontainer h2 {\n    font-family: 'Montserrat', sans-serif;\n    font-weight: 700;\n    font-size: 24px;\n    margin-bottom: 0;\n}\n.kontainer p {\n    font-family: 'Montserrat', sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n}\n.box {\n    background-color: rgba(77, 169, 255);\n}\n.box2 {\n    width: 90%;\n    margin: 0 auto;\n    display: flex;\n    flex-direction: row;\n}\n.has-search {\n    padding: 0 0 10px 0;\n}\n.has-search input::-webkit-input-placeholder {\n    font-family: 'Montserrat', sans-serif;\n    font-weight: 400;\n    font-size: 12px;\n    line-height: 3;\n}\n.has-search .form-control {\n    padding-left: 2rem;\n    border: 0 solid transparent;\n    border-radius: 10px;\n}\n.has-search .form-control-feedback {\n    position: absolute;\n    z-index: 2;\n    display: block;\n    width: 2.375rem;\n    height: 2.375rem;\n    line-height: 2.375rem;\n    text-align: center;\n    pointer-events: none;\n    color: #aaa;\n}\n.searchh {\n    width: 78%;\n    margin-right: 10px;\n}\n.filterr {\n    width: 22%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.kontainer {\n        margin: 0 auto;\n}\n.kontainer h2 {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 700;\n        font-size: 24px;\n        margin-bottom: 0;\n}\n.kontainer p {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 300;\n        font-size: 16px;\n}\n.box {\n        background-color: rgba(77, 169, 255);\n}\n.box2 {\n        width: 90%;\n        margin: 0 auto;\n        display: flex;\n        flex-direction: row;\n}\n.has-search {\n        padding: 0 0 10px 0;\n}\n.has-search input::-webkit-input-placeholder {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 400;\n        font-size: 12px;\n        line-height: 3;\n}\n.has-search .form-control {\n        padding-left: 2rem;\n        border: 0 solid transparent;\n        border-radius: 10px;\n}\n.has-search .form-control-feedback {\n        position: absolute;\n        z-index: 2;\n        display: block;\n        width: 2.375rem;\n        height: 2.375rem;\n        line-height: 2.375rem;\n        text-align: center;\n        pointer-events: none;\n        color: #aaa;\n}\n.searchh {\n        width: 78%;\n        margin-right: 10px;\n}\n.filterr {\n        width: 22%;\n}\n.button-category {\n        border: 0 solid black;\n        padding: 5px 10px;\n        background: #FFFDFD;\n        margin-right: 10px;\n        border-radius: 10px;\n/* box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);\nborder-radius: 10px; */\n}\n.button-category:hover {\n        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);\n        color: #4DA9FF;\n}\nsection {\n        width: 90%;\n        margin: 20px auto;\n        display: flex;\n        flex-direction: row;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39616,6 +39638,18 @@ var staticRenderFns = [
             ])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("section", [
+        _c("button", { staticClass: "button-category" }, [_vm._v("Semua")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "button-category" }, [_vm._v("Ayam")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "button-category" }, [
+          _vm._v("Nasi goreng")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "button-category" }, [_vm._v("Soto")])
       ])
     ])
   }
@@ -39679,6 +39713,32 @@ var render = function() {
                       return
                     }
                     _vm.$set(_vm.menu, "nama", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Kategori")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.menu.kategori,
+                    expression: "menu.kategori"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.menu.kategori },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.menu, "kategori", $event.target.value)
                   }
                 }
               })

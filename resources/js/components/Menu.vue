@@ -14,6 +14,15 @@
                         </div> -->
                     </div>
                     <div class="form-group">
+                        <label>Kategori</label>
+                        <input type="text" class="form-control" v-model="menu.kategori">
+                        <!-- <div v-if="validation.title">
+                            <div class="alert alert-danger mt-1" role="alert">
+                                {{ validation.title[0] }}
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="form-group">
                         <label>Stock</label>
                         <input type="number" class="form-control" v-model="menu.stock">
                         <!-- <div v-if="validation.title">
@@ -62,6 +71,7 @@
             return {
                 menu: {
                     nama: null,
+                    kategori: null,
                     foto_menu: null,
                     stock: null,
                     harga: null,
@@ -76,6 +86,7 @@
             onUpload() {
                 const menu = new FormData();
                 menu.append('nama', this.nama);
+                menu.append('kategori', this.kategori);
                 menu.append('foto_menu', this.foto_menu);
                 menu.append('stock', this.stock);
                 menu.append('harga', this.harga);
