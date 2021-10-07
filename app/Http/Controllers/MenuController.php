@@ -59,16 +59,18 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        if ($request->hasFile('foto_menu')) {
-            $path = $request->file('foto_menu')->store('menu_images');
-            $request->foto_menu = $path;
-            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
-            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
-        }
+
 
         try {
+
+            if ($request->hasFile('foto_menu')) {
+                $path = $request->file('foto_menu')->store('menu_images');
+                $request->foto_menu = $path;
+                // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
+                // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
+            }
             //input all : tidak bisa karena ada file path foto
-            // $menu = Menu::create($request->all());
+            // $menu = Menu::create( $request->all());
 
             //input manual untuk menghilangkan kerusakan input foto
             $menu = new Menu();
@@ -134,11 +136,11 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'nama' => ['required'],
-            'stock' => ['required', 'numeric'],
-            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg', 'max:2048'],
-            'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required']
+            'nama' => [],
+            'stock' => [ 'numeric'],
+            'foto_menu' => [ 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
+            'harga' => [ 'numeric'],
+            'deskripsi' => []
         ]);
 
         if ($validator->fails()) {
@@ -159,7 +161,6 @@ class MenuController extends Controller
             // $menu = Menu::create($request->all());
 
             //input manual untuk menghilangkan kerusakan input foto
-            $menu = new Menu();
             $menu->nama = $request->nama;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
