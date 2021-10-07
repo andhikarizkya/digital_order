@@ -47,6 +47,7 @@ class MenuController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
+            'kategori' => ['required'],
             'stock' => ['required', 'numeric'],
             'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
@@ -135,10 +136,11 @@ class MenuController extends Controller
 
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
+            'kategori' => ['required'],
             'stock' => ['required', 'numeric'],
-            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required']
+            'deskripsi' => ['required'],
+            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048']
         ]);
 
         if ($validator->fails()) {
@@ -149,22 +151,15 @@ class MenuController extends Controller
         if ($request->hasFile('foto_menu')) {
             $path = $request->file('foto_menu')->store('menu_images');
             $request->foto_menu = $path;
-            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
-            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
         }
 
         try {
-
-            //input all : tidak bisa karena ada file path foto
-            // $menu = Menu::create($request->all());
-
-            //input manual untuk menghilangkan kerusakan input foto
             $menu->nama = $request->nama;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
             $menu->harga = $request->harga;
             $menu->deskripsi = $request->deskripsi;
-            $menu->update();
+            $menu->save();
 
             $response = [
                 'massage' => 'menu update',
