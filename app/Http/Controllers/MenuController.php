@@ -59,16 +59,14 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-
+        if ($request->hasFile('foto_menu')) {
+            $path = $request->file('foto_menu')->store('menu_images');
+            $request->foto_menu = $path;
+            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
+            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
+        }
 
         try {
-
-            if ($request->hasFile('foto_menu')) {
-                $path = $request->file('foto_menu')->store('menu_images');
-                $request->foto_menu = $path;
-                // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
-                // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
-            }
             //input all : tidak bisa karena ada file path foto
             // $menu = Menu::create( $request->all());
 
@@ -136,11 +134,11 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'nama' => [],
-            'stock' => [ 'numeric'],
-            'foto_menu' => [ 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
-            'harga' => [ 'numeric'],
-            'deskripsi' => []
+            'nama' => ['required'],
+            'stock' => ['required', 'numeric'],
+            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
+            'harga' => ['required', 'numeric'],
+            'deskripsi' => ['required']
         ]);
 
         if ($validator->fails()) {
