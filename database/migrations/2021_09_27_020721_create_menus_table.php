@@ -17,13 +17,17 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('kategori_id');
+            $table->integer('kategori_id')->nullable();
             $table->string('foto_menu');
             $table->integer('stock');
             $table->double('harga');
             $table->char('deskripsi');
             $table->timestamp('time')->default(now());
             $table->timestamps();
+
+            $table->foreign('kategori_id')
+            ->references('id')
+            ->on('kategoris');
         });
     }
 
