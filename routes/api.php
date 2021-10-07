@@ -3,6 +3,7 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\DetailPesananController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\TransaksiController;
@@ -67,3 +68,8 @@ Route::resource('/notifikasi', NotifikasiController::class)->except(['create', '
 */
 
 Route::resource('/transaksi', TransaksiController::class)->except(['create', 'edit']);
+/*
+| Routes for Transaksi
+*/
+
+Route::resource('/kategori', KategoriController::class)->except(['create', 'edit']);
