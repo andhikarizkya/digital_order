@@ -6,6 +6,7 @@ use App\Models\Menu;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpFoundation\Response;
 
 class MenuController extends Controller
@@ -52,21 +53,37 @@ class MenuController extends Controller
             'deskripsi' => ['required']
         ]);
 
+
         if ($validator->fails()) {
             return response()->json($validator->errors(),
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        if ($request->file('foto_menu')) {
+        if ($request->hasFile('foto_menu')) {
             $path = $request->file('foto_menu')->store('menu_images');
             $request->foto_menu = $path;
+            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
+            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
         }
 
         try {
-            $menu = Menu::create($request->all());
+            //input all : tidak bisa karena ada file path foto
+            // $menu = Menu::create($request->all());
+
+            //input manual untuk menghilangkan kerusakan input foto
+            $menu = new Menu();
+            $menu->nama = $request->nama;
+            $menu->stock = $request->stock;
+            $menu->foto_menu = $request->foto_menu;
+            $menu->harga = $request->harga;
+            $menu->deskripsi = $request->deskripsi;
+            $menu->save();
+
             $response = [
                 'massage' => 'menu created',
-                'data' => $menu
+                'data' => $menu,
+                'foto_dimenu'=> $menu->foto_menu,
+                'foto' => $request->foto_menu
             ];
 
             return response()->json($response, Response::HTTP_CREATED);
@@ -129,10 +146,27 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        try {
+        if ($request->hasFile('foto_menu')) {
             $path = $request->file('foto_menu')->store('menu_images');
             $request->foto_menu = $path;
-            $menu->update($request->all());
+            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
+            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
+        }
+
+        try {
+
+            //input all : tidak bisa karena ada file path foto
+            // $menu = Menu::create($request->all());
+
+            //input manual untuk menghilangkan kerusakan input foto
+            $menu = new Menu();
+            $menu->nama = $request->nama;
+            $menu->stock = $request->stock;
+            $menu->foto_menu = $request->foto_menu;
+            $menu->harga = $request->harga;
+            $menu->deskripsi = $request->deskripsi;
+            $menu->update();
+
             $response = [
                 'massage' => 'menu update',
                 'data' => $menu
