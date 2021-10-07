@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\Stmt\Enum_;
 
 class CreateMenusTable extends Migration
 {
@@ -16,7 +17,7 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('kategori');
+            $table->enum('kategori', ['nasi', 'mie', 'ayam', 'sapi', 'ikan', 'minuman']);
             $table->string('foto_menu');
             $table->integer('stock');
             $table->double('harga');

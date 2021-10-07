@@ -47,7 +47,7 @@ class MenuController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
-            'kategori' => ['required'],
+            'kategori' => ['required','in:nasi,mie,ayam,sapi,ikan,minuman'],
             'stock' => ['required', 'numeric'],
             'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
@@ -137,7 +137,7 @@ class MenuController extends Controller
 
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
-            'kategori' => ['required'],
+            'kategori' => ['required','in:nasi,mie,ayam,sapi,ikan,minuman'],
             'stock' => ['required', 'numeric'],
             'harga' => ['required', 'numeric'],
             'deskripsi' => ['required'],
