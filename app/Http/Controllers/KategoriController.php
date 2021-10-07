@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
+use App\Models\Kategori;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpFoundation\Response;
 
-class MenuController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +17,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu = Menu::orderBy('time', 'DESC')->get();
+        $kategori = Kategori::orderBy('id', 'DESC')->get();
         $response = [
-            'massage' =>  'list menu order by time',
-            'data' => $menu
+            'massage' =>  'list kategori order by time',
+            'data' => $kategori
         ];
 
         return response()->json($response, Response::HTTP_OK);
@@ -46,12 +45,7 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama' => ['required'],
-            'kategori' => ['required'],
-            'stock' => ['required', 'numeric'],
-            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
-            'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required']
+            'kategori' => ['required']
         ]);
 
 
@@ -60,32 +54,12 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        if ($request->hasFile('foto_menu')) {
-            $path = $request->file('foto_menu')->store('menu_images');
-            $request->foto_menu = $path;
-            // $request->file('foto_menu')->move(public_path('img/menu/'), $request->file('foto_menu')->getClientOriginalName());
-            // $request->foto_menu = 'img/menu' . $request->file('foto_menu')->getClientOriginalName();
-        }
-
         try {
-            //input all : tidak bisa karena ada file path foto
-            // $menu = Menu::create( $request->all());
 
-            //input manual untuk menghilangkan kerusakan input foto
-            $menu = new Menu();
-            $menu->nama = $request->nama;
-            $menu->kategori = $request->kategori;
-            $menu->stock = $request->stock;
-            $menu->foto_menu = $request->foto_menu;
-            $menu->harga = $request->harga;
-            $menu->deskripsi = $request->deskripsi;
-            $menu->save();
-
+            $kategori = Kategori::create( $request->all());
             $response = [
-                'massage' => 'menu created',
-                'data' => $menu,
-                'foto_dimenu'=> $menu->foto_menu,
-                'foto' => $request->foto_menu
+                'massage' => 'kategori created',
+                'data' => $kategori
             ];
 
             return response()->json($response, Response::HTTP_CREATED);
@@ -104,10 +78,10 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        $menu = Menu::findOrFail($id);
+        $kategori = Kategori::findOrFail($id);
         $response = [
-            'massage' => 'Detail of menu',
-            'data' => $menu
+            'massage' => 'Detail of kategori',
+            'data' => $kategori
         ];
 
         return response()->json($response, Response::HTTP_OK);
@@ -133,15 +107,10 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $menu = Menu::findOrFail($id);
+        $kategori = Kategori::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
-            'nama' => ['required'],
-            'kategori' => ['required'],
-            'stock' => ['required', 'numeric'],
-            'harga' => ['required', 'numeric'],
-            'deskripsi' => ['required'],
-            'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048']
+            'kategori' => ['required']
         ]);
 
         if ($validator->fails()) {
@@ -149,23 +118,11 @@ class MenuController extends Controller
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        if ($request->hasFile('foto_menu')) {
-            $path = $request->file('foto_menu')->store('menu_images');
-            $request->foto_menu = $path;
-        }
-
         try {
-            $menu->nama = $request->nama;
-            $menu->kategori = $request->kategori;
-            $menu->stock = $request->stock;
-            $menu->foto_menu = $request->foto_menu;
-            $menu->harga = $request->harga;
-            $menu->deskripsi = $request->deskripsi;
-            $menu->save();
-
+            $kategori->update($request->all());
             $response = [
-                'massage' => 'menu update',
-                'data' => $menu
+                'massage' => 'kategori update',
+                'data' => $kategori
             ];
 
             return response()->json($response, Response::HTTP_OK);
@@ -184,13 +141,13 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::findOrFail($id);
+        $kategori = Kategori::findOrFail($id);
 
         try {
-            $menu->delete();
+            $kategori->delete();
             $response = [
-                'massage' => 'menu deleted',
-                'data' => $menu
+                'massage' => 'kategori delete',
+                'data' => $kategori
             ];
 
             return response()->json($response, Response::HTTP_OK);

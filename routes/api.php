@@ -27,27 +27,43 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 /*
-| Routes for menu
+| Routes for Menu
 */
 
 // Route::get('/menu', [MenuController::class, 'index']);
 // Route::post('/menu', [MenuController::class, 'store']);
 // Route::get('/menu/{id}', [MenuController::class, 'show']);
-// Route::post('/menu/{id}', [MenuController::class, 'update']);
+Route::post('/menu/{id}', [MenuController::class, 'update']);
 // Route::delete('/menu/{id}', [MenuController::class, 'destroy']);
 
 Route::resource('/menu', MenuController::class)->except(['create', 'edit']);
 
 /*
-| Routes for detail pesanan
+| Routes for Pesanan
 */
 
 Route::resource('/pesanan', PesananController::class)->except(['create', 'edit']);
 
+/*
+| Routes for Detail Pesanan
+*/
+
 Route::resource('/detail', DetailPesananController::class)->except(['create', 'edit']);
+
+/*
+| Routes for Log
+*/
 
 Route::resource('/log', LogController::class)->except(['create', 'edit']);
 
+/*
+| Routes for Notifikasi
+*/
+
 Route::resource('/notifikasi', NotifikasiController::class)->except(['create', 'edit']);
+
+/*
+| Routes for Transaksi
+*/
 
 Route::resource('/transaksi', TransaksiController::class)->except(['create', 'edit']);
