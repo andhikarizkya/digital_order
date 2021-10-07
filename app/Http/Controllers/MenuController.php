@@ -74,6 +74,7 @@ class MenuController extends Controller
             //input manual untuk menghilangkan kerusakan input foto
             $menu = new Menu();
             $menu->nama = $request->nama;
+            $menu->kategori = $request->kategori;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
             $menu->harga = $request->harga;
@@ -155,6 +156,7 @@ class MenuController extends Controller
 
         try {
             $menu->nama = $request->nama;
+            $menu->kategori = $request->kategori;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
             $menu->harga = $request->harga;
