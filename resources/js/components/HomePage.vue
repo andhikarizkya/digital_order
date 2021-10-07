@@ -17,10 +17,10 @@
             </div>
         </div> 
         <section>
-            <button class="button-category">Semua</button>
-            <button class="button-category">Ayam</button>
-            <button class="button-category">Nasi goreng</button>
-            <button class="button-category">Soto</button>
+            <p class="button-category">Semua</p>
+            <div v-for="(kategories, index) in kategori" :key="index">
+                <p class="button-category">{{ kategories.kategori }}</p>
+            </div>
         </section>
 
     </div>  
@@ -30,7 +30,14 @@
 export default {
     data() {
         return {
+            kategori: []
         }
+    },
+    created() {
+        let uri = `http://localhost:8000/api/kategori`;
+        this.axios.get(uri).then(response => {
+            this.kategori = response.data.data;
+        });
     }
 }
 </script>

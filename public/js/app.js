@@ -2345,7 +2345,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {};
+    return {
+      kategori: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    var uri = "http://localhost:8000/api/kategori";
+    this.axios.get(uri).then(function (response) {
+      _this.kategori = response.data.data;
+    });
   }
 });
 
@@ -2434,7 +2444,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       menu: {
         nama: null,
-        kategori: null,
+        kategori_id: null,
         foto_menu: null,
         stock: null,
         harga: null,
@@ -2451,7 +2461,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var menu = new FormData();
       menu.append('nama', this.nama);
-      menu.append('kategori', this.kategori);
+      menu.append('kategori_id', this.kategori_id);
       menu.append('foto_menu', this.foto_menu);
       menu.append('stock', this.stock);
       menu.append('harga', this.harga);
@@ -39606,50 +39616,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "kontainer" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "section",
+      [
+        _c("p", { staticClass: "button-category" }, [_vm._v("Semua")]),
+        _vm._v(" "),
+        _vm._l(_vm.kategori, function(kategories, index) {
+          return _c("div", { key: index }, [
+            _c("p", { staticClass: "button-category" }, [
+              _vm._v(_vm._s(kategories.kategori))
+            ])
+          ])
+        })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "kontainer" }, [
-      _c("div", { staticClass: "box" }, [
-        _c("div", { staticClass: "box2" }, [
-          _c("div", { staticClass: "searchh" }, [
-            _c("div", { staticClass: "has-search" }, [
-              _c("span", { staticClass: "fa fa-search form-control-feedback" }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control search",
-                attrs: { type: "text", placeholder: "Search" }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "filterr" }, [
-            _c("div", { staticClass: "has-search" }, [
-              _c("span", { staticClass: "fa fa-filter form-control-feedback" }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control filter",
-                attrs: { type: "text", placeholder: "Filter" }
-              })
-            ])
+    return _c("div", { staticClass: "box" }, [
+      _c("div", { staticClass: "box2" }, [
+        _c("div", { staticClass: "searchh" }, [
+          _c("div", { staticClass: "has-search" }, [
+            _c("span", { staticClass: "fa fa-search form-control-feedback" }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control search",
+              attrs: { type: "text", placeholder: "Search" }
+            })
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", [
-        _c("button", { staticClass: "button-category" }, [_vm._v("Semua")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "button-category" }, [_vm._v("Ayam")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "button-category" }, [
-          _vm._v("Nasi goreng")
         ]),
         _vm._v(" "),
-        _c("button", { staticClass: "button-category" }, [_vm._v("Soto")])
+        _c("div", { staticClass: "filterr" }, [
+          _c("div", { staticClass: "has-search" }, [
+            _c("span", { staticClass: "fa fa-filter form-control-feedback" }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control filter",
+              attrs: { type: "text", placeholder: "Filter" }
+            })
+          ])
+        ])
       ])
     ])
   }
@@ -39726,19 +39740,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.menu.kategori,
-                    expression: "menu.kategori"
+                    value: _vm.menu.kategori_id,
+                    expression: "menu.kategori_id"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.menu.kategori },
+                attrs: { type: "number" },
+                domProps: { value: _vm.menu.kategori_id },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.menu, "kategori", $event.target.value)
+                    _vm.$set(_vm.menu, "kategori_id", $event.target.value)
                   }
                 }
               })
