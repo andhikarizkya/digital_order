@@ -47,7 +47,7 @@ class MenuController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
-            'kategori' => ['required'],
+            'kategori_id' => ['required'],
             'stock' => ['required', 'numeric'],
             'foto_menu' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg|max:2048'],
             'harga' => ['required', 'numeric'],
@@ -74,7 +74,7 @@ class MenuController extends Controller
             //input manual untuk menghilangkan kerusakan input foto
             $menu = new Menu();
             $menu->nama = $request->nama;
-            $menu->kategori = $request->kategori;
+            $menu->kategori_id = $request->kategori_id;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
             $menu->harga = $request->harga;
@@ -83,9 +83,7 @@ class MenuController extends Controller
 
             $response = [
                 'massage' => 'menu created',
-                'data' => $menu,
-                'foto_dimenu'=> $menu->foto_menu,
-                'foto' => $request->foto_menu
+                'data' => $menu
             ];
 
             return response()->json($response, Response::HTTP_CREATED);
@@ -137,7 +135,7 @@ class MenuController extends Controller
 
         $validator = Validator::make($request->all(), [
             'nama' => ['required'],
-            'kategori' => ['required'],
+            'kategori_id' => ['required'],
             'stock' => ['required', 'numeric'],
             'harga' => ['required', 'numeric'],
             'deskripsi' => ['required'],
@@ -156,7 +154,7 @@ class MenuController extends Controller
 
         try {
             $menu->nama = $request->nama;
-            $menu->kategori = $request->kategori;
+            $menu->kategori_id = $request->kategori_id;
             $menu->stock = $request->stock;
             $menu->foto_menu = $request->foto_menu;
             $menu->harga = $request->harga;
