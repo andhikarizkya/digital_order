@@ -2340,6 +2340,118 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      menu: {
+        nama: null,
+        foto_menu: null,
+        stock: null,
+        harga: null,
+        deskripsi: null
+      }
+    };
+  },
+  methods: {
+    onFileSelected: function onFileSelected(e) {
+      this.foto_menu = e.target.files[0];
+    },
+    onUpload: function onUpload() {
+      var _this = this;
+
+      var menu = new FormData();
+      menu.append('nama', this.nama);
+      menu.append('foto_menu', this.foto_menu);
+      menu.append('stock', this.stock);
+      menu.append('harga', this.harga);
+      menu.append('deskripsi', this.deskripsi);
+
+      _.each(this.menu, function (value, key) {
+        menu.append(key, value);
+      });
+
+      axios.post('/api/menu', menu).then(function (response) {
+        _this.$router.push({
+          name: 'main'
+        });
+      })["catch"](function (error) {
+        console.log("ERRRR:: ", error.response.data);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -2452,6 +2564,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HomePage_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HomePage.vue */ "./resources/js/components/HomePage.vue");
 /* harmony import */ var _components_FormOrders_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/FormOrders.vue */ "./resources/js/components/FormOrders.vue");
 /* harmony import */ var _components_DetailsProduct_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/DetailsProduct.vue */ "./resources/js/components/DetailsProduct.vue");
+/* harmony import */ var _components_Menu_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Menu.vue */ "./resources/js/components/Menu.vue");
+
 
 
 
@@ -2467,6 +2581,10 @@ var routes = [{
   name: 'detail',
   path: '/detail/:id',
   component: _components_DetailsProduct_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+}, {
+  name: 'menu',
+  path: '/menu',
+  component: _components_Menu_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }];
 
 /***/ }),
@@ -6977,7 +7095,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-detail {\n    font-family: 'Montserrat', sans-serif;\n    margin-top: 30px;\n    margin-bottom: 40px;\n}\n.img-fluid {\n    padding: 10px 10px 10px 10px;\n}\n.form-item {\n    margin: 1em auto;\n}\n.col .nama_produk {\n    font-size: 24px;\n}\n.col .harga_produk {\n    font-size: 18px;\n}\n.col .rincian_produk {\n    font-size: 16px;\n    font-weight: normal;\n    color: #181725;\n}\n.col .deskripsi {\n    font-size: 13px;\n    font-weight: normal;\n    color: #B0B0B0;\n    margin-bottom: 20px;\n}\nlabel {\n    font-family: 'Montserrat', sans-serif;\n    display: flex;\n    font-weight: bold;\n}\n\n/* -- quantity box -- */\n.quantity {\n    display: inline-block;\n}\n.quantity .input-text.qty {\n    width: 35px;\n    height: 39px;\n    padding: 0 5px;\n    text-align: center;\n    background-color: transparent;\n    border: 1px solid #efefef;\n}\n.quantity.buttons_added {\n    text-align: right;\n    position: relative;\n    white-space: nowrap;\n    vertical-align: top;\n}\n.quantity.buttons_added input {\n    display: inline-block;\n    margin: 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added label {\n    float: left;\n    justify-content: left;\n    font-size: 16px;\n    margin: 12px 0 0 0;\n    vertical-align: top;\n    box-shadow: none;\n}\n.quantity.buttons_added .minus,\n.quantity.buttons_added .plus {\n    padding: 7px 10px 8px;\n    height: 41px;\n    background-color: #ffffff;\n    border: 1px solid #efefef;\n    cursor:pointer;}\n.quantity.buttons_added .minus {\n    border-right: 0;\n}\n.quantity.buttons_added .plus {\n    border-left: 0;\n}\n.quantity.buttons_added .minus:hover,\n.quantity.buttons_added .plus:hover {\n    background: #eeeeee;\n}\n.quantity input::-webkit-outer-spin-button,\n.quantity input::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    margin: 0;\n}\n.quantity.buttons_added .minus:focus,\n.quantity.buttons_added .plus:focus {\n    outline: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-detail {\r\n    font-family: 'Montserrat', sans-serif;\r\n    margin-top: 30px;\r\n    margin-bottom: 40px;\n}\n.img-fluid {\r\n    padding: 10px 10px 10px 10px;\n}\n.form-item {\r\n    margin: 1em auto;\n}\n.col .nama_produk {\r\n    font-size: 24px;\n}\n.col .harga_produk {\r\n    font-size: 18px;\n}\n.col .rincian_produk {\r\n    font-size: 16px;\r\n    font-weight: normal;\r\n    color: #181725;\n}\n.col .deskripsi {\r\n    font-size: 13px;\r\n    font-weight: normal;\r\n    color: #B0B0B0;\r\n    margin-bottom: 20px;\n}\nlabel {\r\n    font-family: 'Montserrat', sans-serif;\r\n    display: flex;\r\n    font-weight: bold;\n}\r\n\r\n/* -- quantity box -- */\n.quantity {\r\n    display: inline-block;\n}\n.quantity .input-text.qty {\r\n    width: 35px;\r\n    height: 39px;\r\n    padding: 0 5px;\r\n    text-align: center;\r\n    background-color: transparent;\r\n    border: 1px solid #efefef;\n}\n.quantity.buttons_added {\r\n    text-align: right;\r\n    position: relative;\r\n    white-space: nowrap;\r\n    vertical-align: top;\n}\n.quantity.buttons_added input {\r\n    display: inline-block;\r\n    margin: 0;\r\n    vertical-align: top;\r\n    box-shadow: none;\n}\n.quantity.buttons_added label {\r\n    float: left;\r\n    justify-content: left;\r\n    font-size: 16px;\r\n    margin: 12px 0 0 0;\r\n    vertical-align: top;\r\n    box-shadow: none;\n}\n.quantity.buttons_added .minus,\r\n.quantity.buttons_added .plus {\r\n    padding: 7px 10px 8px;\r\n    height: 41px;\r\n    background-color: #ffffff;\r\n    border: 1px solid #efefef;\r\n    cursor:pointer;}\n.quantity.buttons_added .minus {\r\n    border-right: 0;\n}\n.quantity.buttons_added .plus {\r\n    border-left: 0;\n}\n.quantity.buttons_added .minus:hover,\r\n.quantity.buttons_added .plus:hover {\r\n    background: #eeeeee;\n}\n.quantity input::-webkit-outer-spin-button,\r\n.quantity input::-webkit-inner-spin-button {\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    margin: 0;\n}\n.quantity.buttons_added .minus:focus,\r\n.quantity.buttons_added .plus:focus {\r\n    outline: none;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7001,7 +7119,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-pemesanan {\n    font-family: 'Montserrat', sans-serif;\n    padding: 20px 30px;\n    margin: 10px 10px 10px 10px;\n}\n.form-item .rangkuman {\n    font-size: 16px;\n    font-style: normal;\n    font-weight: 300;\n}\n.form-item .pesanans1 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: normal;\n}\n.form-item .pesanans2 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: normal;\n}\n.form-item .total {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n}\n.form-item .col .tambah_pesanan {\n    font-size: 10px;\n    font-weight: 300;\n    float: right;\n    color: #4DA9FF;\n    text-align: right;\n    border: 0;\n    background-color: #FFFFFF;\n    cursor: pointer;\n}\n.form-item .col .pesanan1 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item .col .pesanan2 {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item .col .total_harga {\n    font-size: 14px;\n    font-style: normal;\n    font-weight: 600;\n    text-align: right;\n}\n.form-item {\n    margin: 1em auto;\n}\n.form-item .col label {\n    font-family: 'Montserrat', sans-serif;\n    display: block;\n    font-weight: bold;\n    font-size: 12px;\n}\n.form-item input {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item textarea {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 10px;\n    width: 100%;\n    padding: 5px 10px 5px 10px;\n}\n.form-item select {\n    font-family: 'Montserrat', sans-serif;\n    border: 1px solid grey;\n    border-radius: 5px;\n    width: 100%;\n    padding: 7px 5px 7px 5px;\n}\n.form-item option {\n    font-family: 'Montserrat', sans-serif;\n}\nhr.class-5 {\n            background-color: #fff;\n            border-top: 2px dashed #8c8b8b;\n}\n.btn {\n    font-family: 'Montserrat', sans-serif;\n    display: flex;\n    font-size: 18px;\n    width: 100%;\n    height: 55px;\n    border: 1px solid;\n    border-radius: 10px;\n    padding: 14px 28px;\n    cursor: pointer;\n}\n.primary {\n    background-color: #4DA9FF;\n    color: #FFFFFF;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.layout-pemesanan {\r\n    font-family: 'Montserrat', sans-serif;\r\n    padding: 20px 30px;\r\n    margin: 10px 10px 10px 10px;\n}\n.form-item .rangkuman {\r\n    font-size: 16px;\r\n    font-style: normal;\r\n    font-weight: 300;\n}\n.form-item .pesanans1 {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: normal;\n}\n.form-item .pesanans2 {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: normal;\n}\n.form-item .total {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 600;\n}\n.form-item .col .tambah_pesanan {\r\n    font-size: 10px;\r\n    font-weight: 300;\r\n    float: right;\r\n    color: #4DA9FF;\r\n    text-align: right;\r\n    border: 0;\r\n    background-color: #FFFFFF;\r\n    cursor: pointer;\n}\n.form-item .col .pesanan1 {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    text-align: right;\n}\n.form-item .col .pesanan2 {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    text-align: right;\n}\n.form-item .col .total_harga {\r\n    font-size: 14px;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    text-align: right;\n}\n.form-item {\r\n    margin: 1em auto;\n}\n.form-item .col label {\r\n    font-family: 'Montserrat', sans-serif;\r\n    display: block;\r\n    font-weight: bold;\r\n    font-size: 12px;\n}\n.form-item input {\r\n    font-family: 'Montserrat', sans-serif;\r\n    border: 1px solid grey;\r\n    border-radius: 10px;\r\n    width: 100%;\r\n    padding: 5px 10px 5px 10px;\n}\n.form-item textarea {\r\n    font-family: 'Montserrat', sans-serif;\r\n    border: 1px solid grey;\r\n    border-radius: 10px;\r\n    width: 100%;\r\n    padding: 5px 10px 5px 10px;\n}\n.form-item select {\r\n    font-family: 'Montserrat', sans-serif;\r\n    border: 1px solid grey;\r\n    border-radius: 5px;\r\n    width: 100%;\r\n    padding: 7px 5px 7px 5px;\n}\n.form-item option {\r\n    font-family: 'Montserrat', sans-serif;\n}\nhr.class-5 {\r\n            background-color: #fff;\r\n            border-top: 2px dashed #8c8b8b;\n}\n.btn {\r\n    font-family: 'Montserrat', sans-serif;\r\n    display: flex;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    height: 55px;\r\n    border: 1px solid;\r\n    border-radius: 10px;\r\n    padding: 14px 28px;\r\n    cursor: pointer;\n}\n.primary {\r\n    background-color: #4DA9FF;\r\n    color: #FFFFFF;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38700,6 +38818,45 @@ component.options.__file = "resources/js/components/HomePage.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Menu.vue":
+/*!******************************************!*\
+  !*** ./resources/js/components/Menu.vue ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Menu.vue?vue&type=template&id=7fa2c4ca& */ "./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca&");
+/* harmony import */ var _Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Menu.vue?vue&type=script&lang=js& */ "./resources/js/components/Menu.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Menu.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/App.vue?vue&type=script&lang=js&":
 /*!*******************************************************!*\
   !*** ./resources/js/App.vue?vue&type=script&lang=js& ***!
@@ -38777,6 +38934,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomePage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HomePage.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomePage.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomePage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Menu.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Menu.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Menu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -38926,6 +39099,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomePage_vue_vue_type_template_id_fa44bb0e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomePage_vue_vue_type_template_id_fa44bb0e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HomePage.vue?vue&type=template&id=fa44bb0e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HomePage.vue?vue&type=template&id=fa44bb0e&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Menu.vue?vue&type=template&id=7fa2c4ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca&");
 
 
 /***/ }),
@@ -39430,6 +39620,169 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticStyle: { padding: "10px" } }, [
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Create Product")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.onUpload.apply(null, arguments)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Nama")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.menu.nama,
+                    expression: "menu.nama"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.menu.nama },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.menu, "nama", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Stock")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.menu.stock,
+                    expression: "menu.stock"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number" },
+                domProps: { value: _vm.menu.stock },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.menu, "stock", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Harga")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.menu.harga,
+                    expression: "menu.harga"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "number" },
+                domProps: { value: _vm.menu.harga },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.menu, "harga", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Deskripsi")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.menu.deskripsi,
+                    expression: "menu.deskripsi"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.menu.deskripsi },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.menu, "deskripsi", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("File")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "file" },
+                on: { change: _vm.onFileSelected }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              [_vm._v("Create")]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -54759,7 +55112,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"axios@^0.21","name":"axios","escapedName":"axios","rawSpec":"^0.21","saveSpec":null,"fetchSpec":"^0.21"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_shasum":"c67b90dc0568e5c1cf2b0b858c43ba28e2eda575","_spec":"axios@^0.21","_where":"D:\\\\Program Files\\\\GitHub\\\\digital_order","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundleDependencies":false,"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"deprecated":false,"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","c:\\\\xampp\\\\htdocs\\\\digital_order"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"c:\\\\xampp\\\\htdocs\\\\digital_order","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 
