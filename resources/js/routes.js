@@ -1,7 +1,7 @@
 import HomePage from './components/HomePage.vue';
 import FormOrders from './components/FormOrders.vue';
 import DetailsProduct from './components/DetailsProduct.vue';
-import Menu from './components/Menu.vue';
+import HistoryOrders from './components/HistoryOrders.vue';
 
 export const routes = [
     {
@@ -20,8 +20,8 @@ export const routes = [
         component: DetailsProduct
     },
     {
-        name: 'menu',
-        path: '/menu',
-        component: Menu
-    },
+        name: 'history',
+        path: '/history/:id',
+        component: HistoryOrders
+    }
 ];
