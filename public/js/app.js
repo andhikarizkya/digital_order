@@ -2343,19 +2343,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      kategori: []
+      kategori: [],
+      menu: [],
+      currentFilter: 0
     };
   },
   created: function created() {
     var _this = this;
 
     var uri = "http://localhost:8000/api/kategori";
+    var url = "http://localhost:8000/api/menu";
     this.axios.get(uri).then(function (response) {
       _this.kategori = response.data.data;
     });
+    this.axios.get(url).then(function (response) {
+      _this.menu = response.data.data;
+    });
+  },
+  methods: {
+    setFilter: function setFilter(filter) {
+      this.currentFilter = filter;
+    }
   }
 });
 
@@ -7175,7 +7226,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.kontainer {\n        margin: 0 auto;\n}\n.kontainer h2 {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 700;\n        font-size: 24px;\n        margin-bottom: 0;\n}\n.kontainer p {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 300;\n        font-size: 16px;\n}\n.box {\n        background-color: rgba(77, 169, 255);\n}\n.box2 {\n        width: 90%;\n        margin: 0 auto;\n        display: flex;\n        flex-direction: row;\n}\n.has-search {\n        padding: 0 0 10px 0;\n}\n.has-search input::-webkit-input-placeholder {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 400;\n        font-size: 12px;\n        line-height: 3;\n}\n.has-search .form-control {\n        padding-left: 2rem;\n        border: 0 solid transparent;\n        border-radius: 10px;\n}\n.has-search .form-control-feedback {\n        position: absolute;\n        z-index: 2;\n        display: block;\n        width: 2.375rem;\n        height: 2.375rem;\n        line-height: 2.375rem;\n        text-align: center;\n        pointer-events: none;\n        color: #aaa;\n}\n.searchh {\n        width: 78%;\n        margin-right: 10px;\n}\n.filterr {\n        width: 22%;\n}\n.button-category {\n        border: 0 solid black;\n        padding: 5px 10px;\n        background: #FFFDFD;\n        margin-right: 10px;\n        border-radius: 10px;\n/* box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);\nborder-radius: 10px; */\n}\n.button-category:hover {\n        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);\n        color: #4DA9FF;\n}\nsection {\n        width: 90%;\n        margin: 20px auto;\n        display: flex;\n        flex-direction: row;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.kontainer {\n        margin: 0 auto;\n}\n.kontainer h2 {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 700;\n        font-size: 24px;\n        margin-bottom: 0;\n}\n.kontainer p {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 300;\n        font-size: 16px;\n}\n.box {\n        background-color: rgba(77, 169, 255);\n        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n}\n.box2 {\n        width: 90%;\n        margin: 0 auto;\n        display: flex;\n        flex-direction: row;\n}\n.has-search {\n        padding: 0 0 10px 0;\n}\n.has-search input::-webkit-input-placeholder {\n        font-family: 'Montserrat', sans-serif;\n        font-weight: 400;\n        font-size: 12px;\n        line-height: 3;\n}\n.has-search .form-control {\n        padding-left: 2rem;\n        border: 0 solid transparent;\n        border-radius: 10px;\n}\n.has-search .form-control-feedback {\n        position: absolute;\n        z-index: 2;\n        display: block;\n        width: 2.375rem;\n        height: 2.375rem;\n        line-height: 2.375rem;\n        text-align: center;\n        pointer-events: none;\n        color: #aaa;\n}\n.searchh {\n        width: 78%;\n        margin-right: 10px;\n}\n.filterr {\n        width: 22%;\n}\n.button-category {\n        border: 0 solid black;\n        padding: 5px 10px;\n        background: #FFFDFD;\n        margin-right: 10px;\n        border-radius: 10px;\n        font-family: Montserrat;\n        font-style: normal;\n        font-weight: 300;\n        font-size: 14px;\n        color: #000000;\n/* box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);\nborder-radius: 10px; */\n}\n.button-category:hover {\n        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);\n        color: #4DA9FF;\n        font-weight: 600;\n}\n.section-kategori {\n        width: 90%;\n        margin: 20px auto;\n        display: flex;\n        flex-direction: row;\n}\n.section-filter {\n        width: 90%;\n        margin: 20px auto;\n        display: flex;\n        flex-direction: column;\n}\n.cont {\n        width: 100%;\n        display: flex;\n        flex-direction: row;\n        position: relative;\n}\n.card-menu {\n        background: #FFFEFE;\n        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);\n        border-radius: 15px;\n        padding: 10px 16px;\n}\n.card-nama {\n        font-family: 'Montserrat';\n        font-style: normal;\n        font-weight: 600;\n        font-size: 14px;\n        line-height: 17px;\n        color: #000000;\n        width: -webkit-fit-content;\n        width: -moz-fit-content;\n        width: fit-content;\n}\n.card-harga {\n        font-family: 'Montserrat';\n        font-style: normal;\n        font-weight: normal;\n        font-size: 12px;\n        line-height: 18px;\n        margin-top: 5px;\n}\n.rights {\n        position: absolute;\n        top: 0px;\n        right: 0px;\n        color: #F7CC74;\n}\n.button-tambah {\n        border: 1px solid #E2E2E2;\n        border-radius: 50%;\n        width: 18px;\n        height: 18px;\n        padding: 0;\n        font-size: 20px;\n        line-height:0;\n        float: right;\n        color: #53B175;\n        background-color: #ffffff;\n}\n.btn-right {\n        width: 100%;\n        text-align: right;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39619,20 +39670,88 @@ var render = function() {
   return _c("div", { staticClass: "kontainer" }, [
     _vm._m(0),
     _vm._v(" "),
+    _c("section", [
+      _c(
+        "div",
+        { staticClass: "section-kategori" },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "button-category",
+              on: {
+                click: function($event) {
+                  return _vm.setFilter(0)
+                }
+              }
+            },
+            [_vm._v("Semua")]
+          ),
+          _vm._v(" "),
+          _vm._l(_vm.kategori, function(kategories, index) {
+            return _c("div", { key: index }, [
+              _c(
+                "button",
+                {
+                  staticClass: "button-category",
+                  on: {
+                    click: function($event) {
+                      return _vm.setFilter(kategories.id)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(kategories.kategori))]
+              )
+            ])
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
     _c(
       "section",
-      [
-        _c("p", { staticClass: "button-category" }, [_vm._v("Semua")]),
-        _vm._v(" "),
-        _vm._l(_vm.kategori, function(kategories, index) {
-          return _c("div", { key: index }, [
-            _c("p", { staticClass: "button-category" }, [
-              _vm._v(_vm._s(kategories.kategori))
-            ])
-          ])
-        })
-      ],
-      2
+      _vm._l(_vm.menu, function(menus) {
+        return _c("div", { key: menus.id }, [
+          _vm.currentFilter === 0 || _vm.currentFilter === menus.kategori_id
+            ? _c("div", { key: menus.id }, [
+                _c("div", { staticClass: "section-filter" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-4 col-md-4 col-sm-4" }, [
+                      _vm._v(
+                        "\n                            lalalal\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-8 col-md-8 col-sm-8" }, [
+                      _c("div", { staticClass: "card-menu" }, [
+                        _c("div", { staticClass: "cont" }, [
+                          _c("div", { staticClass: "card-nama" }, [
+                            _vm._v(_vm._s(menus.nama))
+                          ]),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass: "fa fa-thumbs-up rights",
+                            attrs: { "aria-hidden": "true" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "cont" }, [
+                          _c("div", { staticClass: "card-harga" }, [
+                            _vm._v("Rp " + _vm._s(menus.harga))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1, true)
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            : _vm._e()
+        ])
+      }),
+      0
     )
   ])
 }
@@ -39664,6 +39783,16 @@ var staticRenderFns = [
             })
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "cont" }, [
+      _c("div", { staticClass: "btn-right" }, [
+        _c("button", { staticClass: "button-tambah" }, [_vm._v("+")])
       ])
     ])
   }

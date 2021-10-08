@@ -16,10 +16,50 @@
                 </div>
             </div>
         </div> 
+        <section >
+            <!-- <div class="button-category">
+                <div class="text-button">Semua</div>            
+            </div>
+            
+            <div class="button-category" v-for="(kategories, index) in kategori" :key="index">
+                <div class="text-button">{{ kategories.kategori }}</div>
+            </div> -->
+            <div class="section-kategori">
+                <button class="button-category" @click="setFilter(0)">Semua</button>
+                <div v-for="(kategories, index) in kategori" :key="index">
+                    <button class="button-category" @click="setFilter(kategories.id)">{{ kategories.kategori }}</button>
+                </div>
+            </div> 
+        </section>
         <section>
-            <p class="button-category">Semua</p>
-            <div v-for="(kategories, index) in kategori" :key="index">
-                <p class="button-category">{{ kategories.kategori }}</p>
+            <div v-for="menus in menu" :key="menus.id">
+                <div v-if="currentFilter === 0 || currentFilter === menus.kategori_id" :key="menus.id">
+                    <div class="section-filter">
+                        <div class="row">
+                            <div class="col-4 col-md-4 col-sm-4">
+                                lalalal
+                            </div>
+                            <div class="col-8 col-md-8 col-sm-8">
+                                <div class="card-menu">
+                                    <div class="cont">
+                                        <div class="card-nama">{{ menus.nama }}</div>
+                                        <i class="fa fa-thumbs-up rights" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <div class="card-harga">Rp {{ menus.harga }}</div>
+                                    </div>
+                                    <div class="cont">
+                                        <div class="btn-right">
+                                            <button class="button-tambah">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h6>{{ filter.nama }}</h6> -->
+                </div>
             </div>
         </section>
 
@@ -30,16 +70,28 @@
 export default {
     data() {
         return {
-            kategori: []
+            kategori: [],
+            menu: [],
+            currentFilter: 0
         }
     },
     created() {
         let uri = `http://localhost:8000/api/kategori`;
+        let url = `http://localhost:8000/api/menu`;
+
         this.axios.get(uri).then(response => {
             this.kategori = response.data.data;
         });
+        this.axios.get(url).then(response => {
+            this.menu = response.data.data;
+        });
+    },
+    methods: {
+        setFilter: function(filter) {
+    	    this.currentFilter = filter;
+        }
     }
-}
+} 
 </script>
 
 <style>
@@ -62,6 +114,7 @@ export default {
 
     .box {
         background-color: rgba(77, 169, 255);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
     .box2 {
@@ -115,6 +168,11 @@ export default {
         background: #FFFDFD;
         margin-right: 10px;
         border-radius: 10px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        color: #000000;
 /* box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
 border-radius: 10px; */
     }
@@ -122,12 +180,78 @@ border-radius: 10px; */
     .button-category:hover {
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
         color: #4DA9FF;
+        font-weight: 600;
     }
 
-    section {
+    .section-kategori {
         width: 90%;
         margin: 20px auto;
         display: flex;
         flex-direction: row;
+    }
+
+    .section-filter {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cont {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .card-menu {
+        background: #FFFEFE;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 10px 16px;
+    }
+
+    .card-nama {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        width: fit-content;
+    }
+
+    .card-harga {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 5px;
+    }
+
+    .rights {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: #F7CC74;
+    }
+
+    .button-tambah {
+        border: 1px solid #E2E2E2;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        font-size: 20px;
+        line-height:0;
+        float: right;
+        color: #53B175;
+        background-color: #ffffff;
+    }
+
+    .btn-right {
+        width: 100%;
+        text-align: right;
     }
 </style>
